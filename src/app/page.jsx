@@ -1,10 +1,12 @@
 import Link from "next/link";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollProgress from "./components/ScrollProgress"; 
 
 export default function Home() {
     return (
         <div>
             <main>
+                <ScrollProgress />
                 <ScrollToTop />
                 <nav className="container">
 

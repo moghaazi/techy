@@ -1,37 +1,28 @@
-import Link from "next/link";
 import ScrollToTop from "./components/ScrollToTop";
-import ScrollProgress from "./components/ScrollProgress"; 
+import ScrollProgress from "./components/ScrollProgress";
+import PostCard from "./components/PostCard/PostCard";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Home() {
-    return (
-        <div>
-            <main>
-                <ScrollProgress />
-                <ScrollToTop />
-                <nav className="container">
+  return (
+    <div>
+      <ScrollProgress />
+      <ScrollToTop />
+      <Header/>
 
-                    <div className="logo">
-                        <Link href="/" className="logo">Techy</Link>
-                    </div>
-                    <input type="search" placeholder="Search..." />
-                    <ul>
-                        <li><Link href="/about" >About</Link></li>
-                        <li><Link href="/team">Team</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
-                    </ul>
-                </nav>
-                <header>
-                    <h1>Welcome to Techy</h1>
-                    <img src="wave.svg" alt="wave" />
-                </header>
-            </main>
-            <div className="posts">
-                <h1>Post</h1>
-            </div>
-            <footer>
-                <img src="wave.svg" alt="wave" />
-                <p>&copy; 2023 Techy. All rights reserved.</p>
-            </footer>
+      {/* Posts */}
+      <div className="posts container">
+        <div className="tags">
+
         </div>
-    )
+        <PostCard />
+        <PostCard />
+      </div>
+
+      <Footer />
+    </div>
+  )
 }
+
+

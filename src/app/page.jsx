@@ -5,24 +5,33 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 export default function Home() {
-  return (
-    <div>
-      <ScrollProgress />
-      <ScrollToTop />
-      <Header/>
+     return (
+          <div>
+               <ScrollProgress />
+               <ScrollToTop />
+               <Header />
 
-      {/* Posts */}
-      <div className="posts container">
-        <div className="tags">
+               {/* Posts */}
+               <div className="posts container">
+                    <div className="tags">
+                         <h1>🔥</h1>
+                         <span>🆕</span>
+                         <span>🔝</span>
+                         <select defaultValue={"Today"}>
+                              <option value="Today">Today</option>
+                              <option value="Week">Week</option>
+                              <option>Month</option>
+                              <option>Year</option>
+                              <option>All</option>
+                         </select>
+                    </div>
+                    <PostCard />
+                    <PostCard />
+               </div>
 
-        </div>
-        <PostCard />
-        <PostCard />
-      </div>
-
-      <Footer />
-    </div>
-  )
+               <Footer />
+          </div>
+     )
 }
 
 

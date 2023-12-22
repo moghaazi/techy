@@ -20,6 +20,10 @@ export default function Footer() {
     padding: '20px',
   };
 
+  const authorStyles = {
+    fontStyle: 'italic',
+  }
+
   return (
     <footer style={footerStyles}>
       <img src="wave.svg" alt="wave" style={waveImageStyles} />
@@ -28,6 +32,7 @@ export default function Footer() {
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam molestiae ipsam obcaecati rerum nesciunt corrupti? Sint, illum minima reiciendis atque doloremque laborum dicta rem consectetur, inventore incidunt natus omnis distinctio.
         </p>
+        <h2>Designed & Developed by <span style={authorStyles}>Moghaazi</span></h2>
       </div>
     </footer>
   );

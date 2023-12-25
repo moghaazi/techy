@@ -1,0 +1,27 @@
+.footer {
+     background-color: white;
+     overflow: hidden;
+     color: black;
+     width: 100%;
+     height: auto;
+     font-size: 1.5rem;
+     z-index: 10;
+     position: relative;
+}
+
+.wave-image {
+     width: 100%;
+     height: auto;
+     margin-bottom: -30rem;
+     transform: rotate(180deg);
+}
+
+.container {
+     margin: 0 auto;
+     max-width: 1200px;
+     padding: 20px;
+}
+
+.author {
+     font-style: italic;
+}

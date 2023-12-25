@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.main {
+     background-color: white;
+     color: black;
+     width: 100%;
+     position: relative;
+}
+
+.headerContainer {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 20px;
+}
+
+.logo {
+     font: bold 4rem 'Pacifico', cursive;
+     text-transform: capitalize;
+     color: #f32291;
+     -webkit-text-stroke: 4px #000;
+     letter-spacing: 4px;
+     text-decoration: none;
+     cursor: pointer;
+}
+
+/* .logo:hover { */
+/*      color: #f32291; */
+/* } */
+
+.searchInput {
+     width: 40%;
+     z-index: 10;
+     padding: 10px;
+     border: 3px solid #000;
+     outline: none;
+     font: bold 2rem 'Roboto', sans-serif;
+     border-radius: 50px;
+}
+
+.navbarLinks {
+     display: flex;
+     list-style: none;
+     gap: 20px;
+     text-decoration: none;
+     font: bold 2.2rem 'Roboto', sans-serif;
+     z-index: 10;
+     color: orange;
+}
+
+.header {
+     background-color: white;
+     height: 70vh;
+     overflow: hidden;
+}
+
+.title {
+     text-align: center;
+     font-family: 'Pacifico', cursive;
+     font-size: 4rem;
+}
+
+.link {
+     text-decoration: none;
+     cursor: pointer;
+     font: bold 1.6rem 'Roboto', sans-serif;
+     color: white;
+     background: #000;
+     padding: 10px;
+     border-radius: 5px;
+}
+
+.link:hover {
+     color: #f32291;
+}
+
+.wave {
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+}

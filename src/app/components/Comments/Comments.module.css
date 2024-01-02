@@ -1,0 +1,60 @@
+.comments {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+
+.title {
+  text-align: center;
+  font: bold 3rem 'Roboto', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.addComment {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.addComment button {
+  padding: 1rem;
+  font: 1.6rem 'Roboto', sans-serif;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+.textArea {
+  width: 80%;
+  height: 8rem;
+  resize: none;
+  padding: 1rem;
+  font: 1.6rem 'Roboto', sans-serif;
+}
+
+.comment {
+  border: 3px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.user__image {
+  border-radius: 50%;
+  width: 60px;
+}
+
+.user__info>small {
+  color: #666;
+}

@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.pagination button {
+    all: unset;
+    background: linear-gradient(to right, #d8771b, #ee1556);
+    color: black;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: .1 ease;
+}
+
+.pagination button:hover {
+    background: linear-gradient(to right, #ee1556, #d8771b);
+}
+
+
+.pagination button:active {
+    scale: .9;
+}

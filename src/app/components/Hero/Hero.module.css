@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.header {
+    background-color: white;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.header .title {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: #000;
+}
+
+.header .wave {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+
+
+
+
+
+
+

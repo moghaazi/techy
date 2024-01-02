@@ -2,6 +2,7 @@
 
 import  { useState } from 'react';
 import './ContactPage.css'; // Import your CSS file for styling
+import Header from "../components/Header/Header" 
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,8 @@ const ContactPage = () => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="contact-container">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit} className="contact-form">
@@ -59,6 +62,7 @@ const ContactPage = () => {
         </label>
         <button type="submit">Submit</button>
       </form>
+    </div>
     </div>
   );
 };

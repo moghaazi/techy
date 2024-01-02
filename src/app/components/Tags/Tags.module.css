@@ -1,0 +1,66 @@
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 6rem;
+}
+
+.tagContainer {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 8rem;
+}
+
+.tagContainer span {
+    font: bold 1.5rem sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    color: black;
+    padding: .25em .75em;
+}
+
+.allTag {
+    background: linear-gradient(to right, #d8771b, #ee1556);
+}
+
+.webTag {
+    background: linear-gradient(to right, #4285f4, #0f9d58);
+}
+
+.aiTag {
+    background: linear-gradient(to right, #673ab7, #ff4081);
+}
+
+.cybersecurityTag {
+    background: linear-gradient(to right, #3f51b5, #2196f3);
+}
+
+.gamingTag {
+    background: linear-gradient(to right, #795548, #ff9800);
+}
+
+.cryptoTag {
+    background: linear-gradient(to right, #607d8b, #e91e63);
+}
+
+.postsFilder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: -8rem;
+}
+
+.postsFilder span {
+    font: bold 3rem sans-serif;
+    cursor: pointer;
+}
+
+.select {
+    cursor: pointer;
+    color: black;
+    margin-left: -1.5rem;
+}

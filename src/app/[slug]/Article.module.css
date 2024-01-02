@@ -1,0 +1,87 @@
+.article {
+     margin: 0 auto;
+     max-width: 1200px;
+     padding: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+.title {
+     font: bold 3rem 'Roboto', sans-serif;
+     margin-bottom: 2rem;
+}
+
+
+.articlePic img {
+     width: 100%;
+     height: 600px;
+     object-fit: cover;
+     border-radius: 1rem;
+     margin-bottom: 2rem;
+}
+
+
+
+.articlePic .card__footer {
+     display: flex;
+     padding: 1rem;
+     margin-top: auto;
+}
+
+.user {
+     display: flex;
+     gap: .5rem;
+     align-items: center;
+     font-size: 1.2rem;
+}
+
+.user__image {
+     border-radius: 50%;
+     width: 60px;
+}
+
+.user__info>small {
+     color: #666;
+}
+
+.contentWrapper {
+     margin: 0 auto;
+     max-width: 1200px;
+     padding: 20px;
+     margin-bottom: 2rem;
+     display: flex;
+     gap: 4rem;
+     flex-direction: row;
+}
+
+.content {
+     margin: 1rem;
+     max-width: 1000px;
+}
+
+.content h3 {
+     margin-bottom: 1rem;
+     font-size: 2rem;
+}
+
+.content p {
+     margin-bottom: 1rem;
+     font-size: .8rem;
+     line-height: 1.5rem;
+}
+
+.asideIcons {
+     cursor: pointer;
+     display: flex;
+     gap: 1rem;
+     flex-direction: column;
+     margin-right: -2rem;
+     z-index: 10;
+}
+
+.asideIcons img {
+     width: 40px;
+     cursor: pointer;
+}

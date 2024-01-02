@@ -9,7 +9,7 @@ export default function Footer() {
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam molestiae ipsam obcaecati rerum nesciunt corrupti? Sint, illum minima reiciendis atque doloremque laborum dicta rem consectetur, inventore incidunt natus omnis distinctio.
         </p>
-        <h2>Designed & Developed by <span className={styles.author}>Moghaazi</span></h2>
+        <h2 className={styles.author}>Designed & Developed by <span >Moghaazi</span></h2>
       </div>
     </footer>
   );

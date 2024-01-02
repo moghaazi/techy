@@ -1,0 +1,29 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.blogPage {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title{
+  text-align: center;
+  font: bold 3rem 'Pacifico', cursive; 
+  margin-bottom: 3rem;
+  background: linear-gradient(to right,#d8771b, #ee1556);
+  color:black;
+  width: 60%;
+  border-radius: 50px;
+}
+
+.posts{
+ margin-top:9rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

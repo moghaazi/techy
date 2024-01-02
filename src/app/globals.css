@@ -24,7 +24,6 @@ body {
 
 /* Posts */
 .posts {
-  min-height: 70rem;
   display: flex;
   justify-content: center;
   align-items: center;

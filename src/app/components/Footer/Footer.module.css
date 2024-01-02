@@ -1,27 +1,39 @@
 .footer {
-     background-color: white;
-     overflow: hidden;
-     color: black;
-     width: 100%;
-     height: auto;
-     font-size: 1.5rem;
-     z-index: 10;
-     position: relative;
+  background-color: white;
+  overflow: hidden;
+  color: black;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+  z-index: 10;
+  position: relative;
+  /* clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%); */
 }
 
 .wave-image {
-     width: 100%;
-     height: auto;
-     margin-bottom: -30rem;
-     transform: rotate(180deg);
+  width: 100%;
+  height: auto;
+  margin-bottom: -30rem;
+  transform: rotate(180deg);
 }
 
 .container {
-     margin: 0 auto;
-     max-width: 1200px;
-     padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
 }
 
+
 .author {
-     font-style: italic;
+  background-color: #333;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  padding: 1rem
+}
+
+.auther span {
+  font-style: italic;
 }

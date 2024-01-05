@@ -1,0 +1,37 @@
+.login {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.login h1 {
+  margin-bottom: 20px;
+}
+
+.login button {
+  all:unset;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 3rem;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  font: bold 2rem 'roboto', sans-serif;
+  cursor: pointer;
+  border: 3px solid white;
+  margin-top:2rem ;
+}
+
+.login button:hover {
+  background-color: black;
+  transition: 0.2s;
+  border: 3px solid white;
+  color: white;
+}
+

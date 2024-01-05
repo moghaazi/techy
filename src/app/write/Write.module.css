@@ -1,0 +1,33 @@
+.write {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+
+.title{
+      all: unset;
+      font: bold 3rem 'Roboto', sans-serif;
+      margin-bottom: 2rem;
+}
+
+.addBtn{
+      cursor: pointer;
+      margin-bottom: .5rem;
+}
+
+.publish{
+      all:unset;
+      padding: .5rem 1rem;
+      cursor: pointer;
+      background-color:pink ;
+      border-radius: 50px;
+      color:black;
+      text-align: center;
+      margin-top: 1rem;
+}
+
+

@@ -10,7 +10,7 @@ import Comments from "../components/Comments/Comments";
 import ScrollToTop from "../components/ScrollToTop";
 
 export default function Article() {
-  const copy = () => toast("Copied!");
+  const copy = () => toast("Article URL Copied!");
   const like = () => toast("Liked!");
   const comment = () => toast("Commented!");
   const bookmark = () => toast("Bookmarked!");

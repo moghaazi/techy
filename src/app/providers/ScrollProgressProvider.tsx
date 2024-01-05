@@ -2,7 +2,7 @@
 import React from 'react';
 import { Next13ProgressBar } from 'next13-progressbar';
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+export default function Providers({ children }) {
   return (
     <>
       {children}
@@ -11,4 +11,3 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Providers;

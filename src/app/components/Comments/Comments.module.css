@@ -37,8 +37,8 @@
 
 .comment {
   border: 3px solid #ccc;
-  border-radius: 1rem;
   padding: 1rem;
+    margin-top: 3rem;
 
 }
 
@@ -57,4 +57,25 @@
 
 .user__info>small {
   color: #666;
+}
+
+.link {
+  all: unset;
+  background: linear-gradient(to right, #d8771b, #ee1556);
+  color: black;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font: bold 1.5rem 'Roboto', sans-serif;
+  transition: .2 ease;
+  text-align: center;
+}
+
+.link:hover {
+  background: linear-gradient(to right, #ee1556, #d8771b);
+}
+
+
+.link:active {
+  scale: .9;
 }

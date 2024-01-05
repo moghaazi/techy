@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Tags from "./components/Tags/Tags";
 import Pagination from "./components/Pagination/Pagination";
-import Article from "./[slug]/page";
+import Article from "./slug/page";
 import NextNProgress from 'nextjs-progressbar';
 import Hero from "./components/Hero/Hero";
 

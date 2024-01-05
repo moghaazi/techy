@@ -1,13 +1,16 @@
 'use client';
+
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import styles from './Header.module.css';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function Header() {
   const searchInputRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
-  const isAuthenticated = true;
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === 'authenticated';
 
   useEffect(() => {
     const handleShortcut = (event) => {
@@ -16,14 +19,13 @@ export default function Header() {
       }
     };
 
-    // Add the event listener when the component mounts
     document.addEventListener('keydown', handleShortcut);
 
-    // Remove the event listener when the component unmounts
     return () => {
       document.removeEventListener('keydown', handleShortcut);
     };
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, []);
+
 
   return (
     <main className={styles.main}>
@@ -47,26 +49,10 @@ export default function Header() {
         </button>
 
         <ul className={isOpen ? styles.navbarLinksOpen : styles.navbarLinksClosed}>
-          <li>
-            <Link className={styles.link} href="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.link} href="/about">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.link} href="/team">
-              Team
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.link} href="/contact">
-              Contact
-            </Link>
-          </li>
+          <li> <Link className={styles.link} href="/"> Home </Link> </li>
+          <li> <Link className={styles.link} href="/about"> About </Link> </li>
+          <li> <Link className={styles.link} href="/team"> Team </Link> </li>
+          <li> <Link className={styles.link} href="/contact"> Contact </Link> </li>
           {isAuthenticated && (
             <li>
               <Link className={styles.link} href="/write">
@@ -76,13 +62,15 @@ export default function Header() {
           )}
           <li>
             <Link className={styles.link} href="/login">
-              Login
+              {isAuthenticated ? (
+                <button onClick={() => signOut()} style={{ all: 'unset' }}>Logout</button>
+              ) : (
+                'Login'
+              )}
             </Link>
           </li>
         </ul>
       </nav>
-
-
     </main>
   );
 }

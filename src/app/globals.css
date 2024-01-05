@@ -38,3 +38,20 @@ body {
   background: linear-gradient(#d8771b, #ee1556);
   border-radius: 50px;
 }
+
+.quill {
+  width: 100vb;
+  border-radius: 1rem;
+}
+
+.ql-container {
+  min-height: 15rem;
+  border-radius:0 0 1rem 1rem;
+}
+
+.ql-editor{
+  font: normal 2rem 'Roboto', sans-serif;
+  color:white
+}
+
+

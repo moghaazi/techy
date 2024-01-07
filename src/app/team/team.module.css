@@ -1,9 +1,12 @@
 .team {
   display: flex;
   justify-content: space-around;
+  gap:1rem;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
+  margin-top:3rem;
 }
 
 .image {
@@ -12,17 +15,25 @@
   height: 150px;
   object-fit: cover;
   margin-bottom: 15px;
+  filter:grayscale(100%) ;
+  transition: all 0.1s ease;
+}
+
+.image:hover {
+  filter: grayscale(0);
+  scale: 1.2;
+  rotate: 8deg;
 }
 
 .name {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #ddd;
 }
 
 .role {
   font-size: 1rem;
-  color: #777;
+  color: #bbb;
 }
 
 /* Add more styles as needed */

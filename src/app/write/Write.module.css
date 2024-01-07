@@ -30,4 +30,14 @@
       margin-top: 1rem;
 }
 
-
+.loading {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  font: bold 5rem 'roboto', sans-serif;
+}

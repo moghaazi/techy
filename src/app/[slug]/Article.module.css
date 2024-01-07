@@ -85,3 +85,9 @@
      width: 40px;
      cursor: pointer;
 }
+
+.asideIcons .icon{
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}

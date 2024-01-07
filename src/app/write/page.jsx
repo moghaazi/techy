@@ -5,10 +5,22 @@ import Header from '../components/Header/Header'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useState } from "react";
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function Write() {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');
+
+    const { data, status } = useSession();
+    const route = useRouter();
+
+    if (status === 'loading') {
+         return <div className={styles.loading}>Loading...</div>
+    }
+
+    status === 'authenticated' ? route.push('/write') : route.push('/login');
+
 
     const handleImageUpload = () => {
         const url = prompt("Enter the image URL:");

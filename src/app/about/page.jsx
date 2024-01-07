@@ -1,12 +1,15 @@
 import Header from "../components/Header/Header"
+import styles from './about.module.css';
 
 export default function About() {
   return (
     <div>
       <Header />
-      <div className="about container">
-        <h1>About</h1>
-        <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
+      <div className={styles.about}>
+        <p>Welcome to our tech website! We are passionate about technology and strive to provide valuable insights, news, and resources to our readers.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to keep you informed about the latest in the tech world. From software development to hardware innovations, we cover it all.</p>
       </div>
     </div >
   )

@@ -70,6 +70,9 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+        {isAuthenticated && session?.user?.image && (
+          <img src={session.user.image} alt="User" className={styles.userImage} />
+        )}
       </nav>
     </main>
   );

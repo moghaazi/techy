@@ -1,5 +1,5 @@
 import styles from './team.module.css';
-import Header from "../components/Header/Header"
+import Header from "../../components/Header/Header"
 
 const Team = () => {
   return (

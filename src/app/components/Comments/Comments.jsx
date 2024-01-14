@@ -15,7 +15,7 @@ export default function Comments() {
                   <textarea className={styles.textArea} placeholder='Add a comment...'></textarea>
                   <button>Submit</button>
                </div>
-            ) : (<Link href="/login" className={styles.link}>Login to add a comment!</Link>)}
+            ) : (<Link href="/pages/login" className={styles.link}>Login to add a comment!</Link>)}
 
          <div className={styles.commentsList}>
             <div className={styles.comment}>

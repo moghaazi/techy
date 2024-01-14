@@ -1,28 +1,57 @@
 .pagination {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     max-width: 500px;
     padding: 20px;
+    gap: 1rem;
+    justify-content: space-between;
 }
+
+.pagination .prev,
+.pagination .next {
+    all: unset;
+    background: linear-gradient(to right, #d8771b, #ee1556);
+    color: black;
+    cursor: pointer;
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: .1 ease;
+}
+
+.pagination .prev {
+    margin-left: -2.3rem;
+}
+
+.pagination .prev:hover,
+.pagination .next:hover {
+    background: linear-gradient(to right, #ee1556, #d8771b);
+}
+
+.pagination .prev:active,
+.pagination .next:active {
+    scale: .9;
+}
+
+.pagination .prev[disabled],
+.pagination .next[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
 
 .pagination button {
     all: unset;
     background: linear-gradient(to right, #d8771b, #ee1556);
     color: black;
     cursor: pointer;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 50px;
     font-weight: bold;
     transition: .1 ease;
 }
 
-.pagination button:hover {
+.active {
     background: linear-gradient(to right, #ee1556, #d8771b);
-}
-
-
-.pagination button:active {
-    scale: .9;
 }

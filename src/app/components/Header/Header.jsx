@@ -50,18 +50,18 @@ export default function Header() {
 
         <ul className={isOpen ? styles.navbarLinksOpen : styles.navbarLinksClosed}>
           <li> <Link className={styles.link} href="/"> Home </Link> </li>
-          <li> <Link className={styles.link} href="/about"> About </Link> </li>
-          <li> <Link className={styles.link} href="/team"> Team </Link> </li>
-          <li> <Link className={styles.link} href="/contact"> Contact </Link> </li>
+          <li> <Link className={styles.link} href="/pages/about"> About </Link> </li>
+          <li> <Link className={styles.link} href="/pages/team"> Team </Link> </li>
+          <li> <Link className={styles.link} href="/pages/contact"> Contact </Link> </li>
           {isAuthenticated && (
             <li>
-              <Link className={styles.link} href="/write">
+              <Link className={styles.link} href="/pages/write">
                 Write
               </Link>
             </li>
           )}
           <li>
-            <Link className={styles.link} href="/login">
+            <Link className={styles.link} href="/pages/login">
               {isAuthenticated ? (
                 <button onClick={() => signOut()} style={{ all: 'unset' }}>Logout</button>
               ) : (

@@ -3,7 +3,6 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    margin-bottom: 6rem;
 }
 
 .tagContainer {
@@ -20,9 +19,10 @@
     cursor: pointer;
     color: black;
     padding: .25em .75em;
+    text-transform: capitalize;
 }
 
-.all {
+.tag.all {
     background: linear-gradient(to right, #d8771b, #ee1556);
 }
 
@@ -32,22 +32,28 @@
 
 .tag.ai {
     background: linear-gradient(to right, #673ab7, #ff4081);
+    text-transform: uppercase;
 }
 
 .tag.cybersecurity {
-    background: linear-gradient(to right, #3f51b5, #2196f3);
+
+background: #98CCA3;
+background: radial-gradient(at right top, #98CCA3, #D67906);
 }
 
 .tag.gaming {
-    background: linear-gradient(to right, #795548, #ff9800);
+background: #7C01FF;
+background: radial-gradient(at center top, #7C01FF, #FF0183);
 }
 
 .tag.crypto {
-    background: linear-gradient(to right, #607d8b, #e91e63);
+background: rgb(34,193,195);
+background: linear-gradient(to right, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 
 .tag.programming {
-    background: linear-gradient(to right, #607d8b, #e91e63);
+background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
 
 .postsFilder {
@@ -55,7 +61,6 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    margin-bottom: -8rem;
 }
 
 .postsFilder span {

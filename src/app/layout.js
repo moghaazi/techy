@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Techy',
   description: 'Latest Tech News',
-  icons: 'favicon.png',
+  icons: '../favicon.png',
 }
 
 export default function RootLayout({ children }) {

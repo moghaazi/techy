@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './contact.module.css'; // Import your CSS file for styling
-import Header from "../components/Header/Header"
+import Header from "../../components/Header/Header"
 
 export default function ContactPage() {
   return (

@@ -1,0 +1,68 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.blogPage {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    font: bold 3rem 'Pacifico', cursive;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #d8771b, #ee1556);
+    color: black;
+    width: 60%;
+    border-radius: 50px;
+    text-transform: capitalize;
+
+}
+
+.posts {
+    margin-top: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.title.all {
+    background: linear-gradient(to right, #d8771b, #ee1556);
+}
+
+.title.web {
+    background: linear-gradient(to right, #4285f4, #0f9d58);
+}
+
+.title.ai {
+    background: linear-gradient(to right, #673ab7, #ff4081);
+        text-transform: uppercase;
+
+}
+
+.title.cybersecurity {
+
+    background: #98CCA3;
+    background: radial-gradient(at right top, #98CCA3, #D67906);
+}
+
+.title.gaming {
+    background: #7C01FF;
+    background: radial-gradient(at center top, #7C01FF, #FF0183);
+}
+
+.title.crypto {
+    background: rgb(34, 193, 195);
+    background: linear-gradient(to right, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+}
+
+.title.programming {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}

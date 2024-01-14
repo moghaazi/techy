@@ -42,7 +42,7 @@ model User {
       image         String?
       accounts      Account[]
       sessions      Session[]
-      Post          Post[]
+      Post          Posts[]
       Comment       Comment[]
 }
 
@@ -58,10 +58,10 @@ model Tags {
       id    String  @id @default(cuid()) @map("_id")
       slug  String  @unique
       title String
-      Posts Post[]
+      Posts Posts[]
 }
 
-model Post {
+model Posts {
       id        String    @id @default(cuid()) @map("_id")
       date      DateTime  @default(now())
       slug      String    @unique
@@ -83,5 +83,5 @@ model Comment {
       userEmail String
       user      User     @relation(fields: [userEmail], references: [email])
       postSlug  String
-      post      Post     @relation(fields: [postSlug], references: [slug])
+      post      Posts     @relation(fields: [postSlug], references: [slug])
 }

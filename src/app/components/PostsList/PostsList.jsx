@@ -3,21 +3,19 @@
 import PostCard from '../PostCard/PostCard';
 import Pagination from '../Pagination/Pagination';
 import styles from './PostsList.module.css';
-import useSWR from 'swr';
-
-const fetcher = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return Array.isArray(data) ? data : [];
-};
+import { useQuery } from '@tanstack/react-query';
 
 export default function PostsList({ page, tag }) {
-    const { data, error } = useSWR(
-        `http://localhost:3000/api/posts?tag=${tag || ''}&page=${page}`,
-        fetcher
-    )
-    if (error) return <div>Failed to load</div>;
-    if (!data) return <div style={{ textAlign: 'center', font: 'bold 5rem sans-serif' }}>Loading...</div>;
+    // Fetch the posts 
+    const { data, isLoading, error } = useQuery(
+        {
+            queryKey: ['post', tag, page],
+            queryFn: () => fetch(`/api/posts?tag=${tag || ''}&page=${page}`).then(res => res.json()),
+        },
+    );
+
+    if (isLoading) return <div className={styles.loader}>Loading...</div>;
+    if (error) return <div className={styles.loader}>Failed to load</div>;
 
     const POST_PER_PAGE = 3;
     const hasPrev = page > 1;
@@ -27,7 +25,7 @@ export default function PostsList({ page, tag }) {
     console.log(`Total Pages: ${totalPages}`);
     console.log(`data length: ${data.length}`);
 
-    
+
     return (
         <div className={styles.postsList}>
             <h1 className={styles.title}>Recent Posts</h1>

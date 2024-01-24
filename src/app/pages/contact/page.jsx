@@ -9,9 +9,9 @@ export default function ContactPage() {
       <Header />
       <div className={styles.contact}>
         <form action="" >
-          <input placeholder="Name" autoFocus />
+          <input type='text' placeholder="Name" autoFocus autoComplete />
           <input type="email" placeholder="Email" />
-          <input placeholder="Subject" />
+          <input type='text' placeholder="Subject" />
           <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
           <button type="submit">Submit</button>
         </form>

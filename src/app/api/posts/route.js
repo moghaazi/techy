@@ -14,6 +14,9 @@ export const GET = async (req) => {
                where: {
                     ...(tag && tag !== 'all' ? { tagSlug: tag } : {}), 
                },
+               include: {
+                    user: true
+               }
           });
 
 

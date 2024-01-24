@@ -25,6 +25,8 @@
   background-color: #ccc;
   border: none;
   cursor: pointer;
+  border-radius: 50px;
+
 }
 
 .textArea {
@@ -33,13 +35,17 @@
   resize: none;
   padding: 1rem;
   font: 1.6rem 'Roboto', sans-serif;
+  border-radius: 10px;
 }
 
 .comment {
   border: 3px solid #ccc;
   padding: 1rem;
-    margin-top: 3rem;
-
+  margin-top: 3rem;
+  font: medium 1.0rem 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: #ccc;
+  border-radius: 10px
 }
 
 .user {
@@ -78,4 +84,12 @@
 
 .link:active {
   scale: .9;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font: bold 5rem 'Roboto', sans-serif;
 }

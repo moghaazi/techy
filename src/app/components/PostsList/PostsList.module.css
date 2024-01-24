@@ -17,6 +17,14 @@
     margin-top: 20px;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font: bold 5rem 'Roboto', sans-serif;
+}
+
 @media (max-width: 1000px) {
     .posts {
         grid-template-columns: repeat(2, 1fr);

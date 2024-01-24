@@ -30,12 +30,12 @@ export default function PostCard({ key, item }) {
                 <div className={styles.card__footer}>
                     <div className={styles.user}>
                         <img
-                            src="../team/me.jpg"
+                            src={item?.user?.image || "https://source.unsplash.com/random"}
                             alt="user__image"
                             className={styles.user__image}
                         />
                         <div className={styles.user__info}>
-                            <h5>{item?.author || "No Author"}</h5>
+                            <h5>{item?.user?.name || "No Author"}</h5>
                             <small>{item?.date.slice(0, 10) || "No Date"}</small>
                         </div>
                     </div>

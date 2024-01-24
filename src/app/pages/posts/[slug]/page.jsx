@@ -10,89 +10,99 @@ import 'react-toastify/dist/ReactToastify.css';
 import Comments from "../../../components/Comments/Comments";
 import ScrollToTop from "../../../components/ScrollToTop";
 import { useSession } from 'next-auth/react';
+import { useQuery } from '@tanstack/react-query';
+
+export default function Article({ params: { slug } }) {
+     const { data: session } = useSession(); // for checking if user is logged in
+
+     const commentsRef = useRef(); // for scrolling to comments
+
+     // Fetch the article
+     const { data: article, isLoading, error } = useQuery(
+          {
+               queryKey: ['post', slug],
+               queryFn: () => fetch(`/api/posts/${slug}`).then(res => res.json()),
+          },
+     );
+
+     if (isLoading) return <div className={styles.loader}>Loading...</div>;
+     if (error) return <div className={styles.loader}>Failed to load</div>;
+
+     // Clipboard 
+     const copy = () => toast("Article URL Copied!");
+     const like = () => toast("Liked!");
+     const bookmark = () => toast("Bookmarked!");
+
+     // useEffect(() => {
+     //   const clipboard = new Clipboard('#copyButton', {
+     //     text: () => window.location.href,
+     //   });
+     //
+     //   return () => clipboard.destroy();
+     // }, []);
+
+     // Comments
+     const scrollToComments = () => {
+          if (commentsRef.current) {
+               commentsRef.current.scrollIntoView({ behavior: 'instant' });
+          }
+     };
+
+     return (
+          <div>
+               <Header />
+               <ScrollToTop />
+               <ScrollProgress />
+               <ToastContainer autoClose={300} />
+
+               <div className={styles.article}>
+                    <h1 className={styles.title}> {article.title || 'No Title'}</h1>
+                    <div className={styles.articlePic}>
+                         <img src={article.img || "https://picsum.photos/1000/600"} />
+                    </div>
+
+                    <div className={styles.author}>
+                         <div className={styles.user}>
+                              <img src={article.user?.image || "https://picsum.photos/100/100"} alt="user__image" className={styles.user__image} />
+                              <div className={styles.user__info}>
+                                   <h5>{article.user?.name || 'No Author'}</h5>
+                                   <small>{article.date.slice(0, 10) || 'No Date'}</small>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div className={styles.contentWrapper}>
+                         <div className={styles.content} dangerouslySetInnerHTML={{ __html: article?.content }} />
 
 
-export default function Article() {
-  const { data: session, status } = useSession();
 
-  // Clipboard 
-  const copy = () => toast("Article URL Copied!");
-  const like = () => toast("Liked!");
-  const bookmark = () => toast("Bookmarked!");
+                         {/* Icons */}
+                         <aside className={styles.asideIcons}>
+                              <div className={styles.icon}>
+                                   <img src="/articleIcons/eye.png" />
+                                   <span>{article.views || 0}</span>
+                              </div>
+                              <div className={styles.icon} onClick={scrollToComments}>
+                                   <img src="/articleIcons/comments.png" alt="Comments" />
+                                   <span>{article.comment|| 0}</span>
+                              </div>
+                              <div className={styles.icon}>
+                                   <img onClick={like} src="/articleIcons/heart-filled.png" />
+                                   <span>{article.likes || 0}</span>
+                              </div>
+                              <div className={styles.icon}>
+                                   <img onClick={bookmark} src="/articleIcons/bookmark.png" />
+                                   <span>{article.bookmarks || 0}</span>
+                              </div>
+                              <img id="copyButton" onClick={copy} src="/articleIcons/copy.png" />
+                              <img src="/articleIcons/share.png" />
+                         </aside>
+                    </div>
+               </div>
 
-  useEffect(() => {
-    const clipboard = new Clipboard('#copyButton', {
-      text: () => window.location.href,
-    });
-    return () => clipboard.destroy();
-  }, []);
-
-  const commentsRef = useRef();
-
-  const scrollToComments = () => {
-    if (commentsRef.current) {
-      commentsRef.current.scrollIntoView({ behavior: 'instant' });
-    }
-  };
-
-  return (
-    <div>
-      <Header />
-      <ScrollToTop />
-      <ScrollProgress />
-      <ToastContainer autoClose={300} />
-      
-      <div className={styles.article}>
-        <h1 className={styles.title}> {session?.post?.title || 'No Title'}</h1>
-        <div className={styles.articlePic}>
-          <img src={session?.post?.img || "https://picsum.photos/1000/600"} />
-        </div>
-
-        <div className={styles.author}>
-          <div className={styles.user}>
-            <img src={session?.user?.image} alt="user__image" className={styles.user__image} />
-            <div className={styles.user__info}>
-              <h5>{session?.user?.name}</h5>
-              <small>{'no date'}</small>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.contentWrapper}>
-          <div className={styles.content}>
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
-            <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
-            <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
-          </div>
-
-          {/* Icons */}
-          <aside className={styles.asideIcons}>
-            <div className={styles.icon}>
-              <img src="/articleIcons/eye.png" />
-              <span>{session?.post?.views || 0}</span>
-            </div>
-            <div className={styles.icon} onClick={scrollToComments}>
-              <img src="/articleIcons/comments.png" alt="Comments" />
-              <span>{session?.post?.comments.length || 0}</span>
-            </div>
-            <div className={styles.icon}>
-              <img onClick={like} src="/articleIcons/heart-filled.png" />
-              <span>{session?.post?.likes.length || 0}</span>
-            </div>
-            <div className={styles.icon}>
-              <img onClick={bookmark} src="/articleIcons/bookmark.png" />
-              <span>{session?.post?.bookmarks.length || 0}</span>
-            </div>
-            <img id="copyButton" onClick={copy} src="/articleIcons/copy.png" />
-            <img src="/articleIcons/share.png" />
-          </aside>
-        </div>
-      </div>
-
-      <div ref={commentsRef}>
-        <Comments />
-      </div>
-    </div >
-  )
+               <div ref={commentsRef}>
+                    <Comments postSlug={slug} />
+               </div>
+          </div >
+     )
 }

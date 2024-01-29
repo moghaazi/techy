@@ -19,26 +19,9 @@ export default function Comments({ postSlug }) {
    );
 
 
-   // const mutation = useMutation((comment) => axios.post('/api/comments', comment), {
-   //    onSuccess: () => {
-   //       toast.success('Comment added!');
-   //       queryClient.invalidateQueries(['comments', postSlug]); // Refetch comments
-   //       setDesc(''); // Clear the comment input
-   //    },
-   //    onError: (error) => {
-   //       console.error('Comment submission error:', error);
-   //       toast.error('Failed to add comment. Please try again.');
-   //    },
-   // });
-   //
-   // const handleSubmit = (e) => {
-   //    e.preventDefault();
-   //    if (!desc.trim()) {
-   //       toast.error('Please enter a comment');
-   //       return;
-   //    }
-   //    mutation.mutate({ postSlug, desc }); 
-   // };
+
+
+
 
    if (isLoading) return <div className={styles.loader}>Loading...</div>
    if (error) return <div className={styles.loader}>Failed to load</div>
@@ -54,7 +37,7 @@ export default function Comments({ postSlug }) {
                   value={desc}
                   onChange={e => setDesc(e.target.value)}
                />
-               <button>Submit</button>
+<button onClick={() => mutation.mutate({ postSlug, desc })}>Submit</button>
             </div>
          ) : (
             <Link href="/pages/login" className={styles.link}>Login to add a comment!</Link>

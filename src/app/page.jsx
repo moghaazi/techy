@@ -7,24 +7,34 @@ import Tags from "./components/Tags/Tags";
 import NextNProgress from 'nextjs-progressbar';
 import Hero from "./components/Hero/Hero";
 import PostsList from "./components/PostsList/PostsList";
+import {
+  QueryClient,
+  HydrationBoundary,
+  dehydrate,
+} from "@tanstack/react-query"
 
 export default function Home({ searchParams }) {
   const page = parseInt(searchParams?.page) || 1;
 
-  return (
-    <div>
+  const queryClient = new QueryClient()
 
-      <NextNProgress />
-      <ScrollProgress />
-      <ScrollToTop />
-      <Header />
-      <Hero />
-      <Tags />
-      <div className="posts container">
-        <PostsList page={page} />
+  return (
+
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <div>
+
+        <NextNProgress />
+        <ScrollProgress />
+        <ScrollToTop />
+        <Header />
+        <Hero />
+        <Tags />
+        <div className="posts container">
+          <PostsList page={page} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </HydrationBoundary>
   )
 }
 

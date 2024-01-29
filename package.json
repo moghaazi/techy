@@ -19,7 +19,7 @@
     "express": "^4.18.2",
     "framer-motion": "^10.16.16",
     "gray-matter": "^4.0.3",
-    "next": "14.0.4",
+    "next": "latest",
     "next-auth": "^4.24.5",
     "next13-progressbar": "^1.1.3",
     "nextjs-progressbar": "^0.0.16",
